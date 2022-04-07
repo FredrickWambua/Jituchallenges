@@ -1,0 +1,43 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: hsl(226, 43%, 10%);
+    /* align-content: center; */
+    
+}
+.container {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: "Rubik", sans-serif;
+}
+
+.one {
+    background-color: white;
+}
+
+.two {
+    background-color: white;
+}
+.three {
+    background-color: coral;
+}
+.four {
+    background-color: yellow;
+}
+.five {
+    background-color: green;
+}
+.six {
+    background-color: red;
+}
+.seven {
+    background-color: purple;
+}
