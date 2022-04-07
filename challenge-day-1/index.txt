@@ -1,0 +1,8 @@
+1. Write a program that prints numbers from 1 to 100. But for multiples of three print
+‘FIZZ’ instead of the number and for the multiples of five print ‘BUZZ’ and finally for
+the multiples of three and five print ‘FIZZBUZZ’.
+2. Given an array of integers nums and an integer target, return indices of the two
+numbers that add up to target.
+3. Given an integer x, return true if x is a palindrome integer. //NB: An integer is a
+palindrome when it reads the same backward as forward e.g 121.
+4.Write a program that takes a set of numbers and returns sum of all the numbers passed.
