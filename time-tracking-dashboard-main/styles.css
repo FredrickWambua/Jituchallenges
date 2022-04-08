@@ -15,21 +15,73 @@ body {
 .container {
     display: grid;
     place-items: center;
-    min-height: 100vh;
     font-family: "Rubik", sans-serif;
+
 }
+
+.profile {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    border-radius: 50%;
+
+}
+
+
+.profile-header {
+    background-color: hsl(235, 45%, 61%);
+    border-radius: 10%;
+    padding: 10%;
+    z-index: 1;
+
+}
+
+.profile-img {
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.profile-bio {
+    margin-top: 20%;
+    color: white;
+}
+
+.profile-bio h1 {
+    font-weight: 300px;
+}
+
+.period-options {
+    background-color: hsl(235, 46%, 20%);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10%;
+    padding: 10%;
+    margin-top: -5%;
+    border-radius: 10%;
+}
+
+.period-options a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* .grid-cards {
+    height: 100%;
+} */
 
 .card {
     background-color: hsl(235, 46%, 20%);
     color: white;
     border-radius: 10px;
     margin-top: -5%;
+    height: 100%;
+    padding-top: 30px;
 }
 .card-header {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 30px;
     display: flex;
     justify-content: space-between;
 }
@@ -44,13 +96,16 @@ body {
     justify-content: flex-end;
     justify-content: right;
     background-color: magenta;
-    opacity: 0.3;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
 }
 
 #icons {
     height: 40px;
     width: 40px;
     margin-right: 5%;
+    opacity: .5;
 }
 
 #ellipsis {
