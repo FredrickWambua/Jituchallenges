@@ -19,25 +19,40 @@ body {
     font-family: "Rubik", sans-serif;
 }
 
-.one {
-    background-color: white;
+.card {
+    background-color: hsl(235, 46%, 20%);
+    color: white;
+    border-radius: 10px;
+    margin-top: -5%;
+}
+.card-header {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 10%;
+}
+.image-icon {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: right;
+    background-color: magenta;
+    opacity: 0.3;
 }
 
-.two {
-    background-color: white;
+#icons {
+    height: 40px;
+    width: 40px;
+    margin-right: 5%;
 }
-.three {
-    background-color: coral;
-}
-.four {
-    background-color: yellow;
-}
-.five {
-    background-color: green;
-}
-.six {
-    background-color: red;
-}
-.seven {
-    background-color: purple;
+
+#ellipsis {
+    height: fit-content;
 }
