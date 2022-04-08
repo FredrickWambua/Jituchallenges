@@ -9,6 +9,7 @@
 body {
     font-family: 'Rubik', sans-serif;
     background-color: hsl(226, 43%, 10%);
+    justify-content: center;
     /* align-content: center; */
     
 }
@@ -16,6 +17,7 @@ body {
     display: grid;
     place-items: center;
     font-family: "Rubik", sans-serif;
+    margin-top: 6em;
 
 }
 
@@ -31,7 +33,9 @@ body {
     background-color: hsl(235, 45%, 61%);
     border-radius: 10%;
     padding: 10%;
+    position: relative;
     z-index: 1;
+
 
 }
 
@@ -44,24 +48,27 @@ body {
 .profile-bio {
     margin-top: 20%;
     color: white;
+    padding-bottom: 30%;
 }
 
 .profile-bio h1 {
     font-weight: 300px;
 }
 
-.period-options {
+
+.period-options{
     background-color: hsl(235, 46%, 20%);
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 10%;
+    gap: 20%;
     padding: 10%;
-    margin-top: -5%;
     border-radius: 10%;
 }
 
+
 .period-options a {
     color: white;
+    /* margin-top: 5px; */
     font-size: 16px;
     text-decoration: none;
 }
@@ -95,19 +102,78 @@ body {
     display: flex;
     justify-content: flex-end;
     justify-content: right;
-    background-color: magenta;
     border-radius: 10px;
     position: relative;
     z-index: -1;
 }
 
-#icons {
+#icon{
     height: 40px;
     width: 40px;
     margin-right: 5%;
-    opacity: .5;
 }
 
 #ellipsis {
     height: fit-content;
 }
+
+.image-icon-work{
+    display: flex;
+    justify-content: flex-end;
+    justify-content: right;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
+    background-color: hsl(15, 100%, 70%);
+}
+
+.image-icon-play {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: right;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
+    background-color: hsl(195, 74%, 62%);
+}
+
+.image-icon-study {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: right;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
+    background-color: hsl(348, 100%, 68%);
+}
+
+.image-icon-exercise {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: right;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
+    background-color: hsl(145, 58%, 55%);
+}
+
+.image-icon-social {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: right;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
+    background-color:  hsl(264, 64%, 52%);
+}
+
+.image-icon-selfcare {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: right;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
+    background-color: hsl(43, 84%, 65%);
+}
+
