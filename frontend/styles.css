@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-brand {
+    float: left;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    margin-top: 0;
+
+}
+
+.navbar .navbar-nav .nav-item {
+    display: inline;
+    list-style: none;
+}
+
+.navbar-nav .nav-item a {
+    text-decoration: none;
+    display: flex;
+    padding: 0.9em 0.7em;
+    font-size: 20px;
+}
