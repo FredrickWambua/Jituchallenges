@@ -9,6 +9,14 @@ body {
     margin-right: auto;
 }
 
+.section-one {
+    background-image: url('./images/hero-cover.3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
 .navbar-brand {
     float: left;
     text-decoration: none;
