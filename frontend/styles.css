@@ -13,7 +13,9 @@ body {
     float: left;
     text-decoration: none;
 }
-
+.nav-elements {
+    float: right;
+}
 .navbar-nav {
     margin-top: 0;
 
@@ -26,7 +28,51 @@ body {
 
 .navbar-nav .nav-item a {
     text-decoration: none;
-    display: flex;
+    display: inline-block;
     padding: 0.9em 0.7em;
     font-size: 20px;
+}
+
+.toggle-collapse {
+    float: right;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.toggle-collapse :hover {
+    color: green;
+}
+
+@media screen and (max-width: 456px) {
+    .navbar-brand  {
+        display: inline-block;
+        float: none;
+    }
+
+    .toggle-collapse {
+        display: inline-block;
+    }
+
+    .navbar-nav {
+        padding: 0;
+    }
+
+    .navbar .navbar-nav .nav-item {
+        display: block;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        width: 100px;
+        overflow: hidden;
+        text-align: center;
+        height: 0vh;
+        transition: all 500ms ease;
+    }
+
+    .collapse {
+        height: 60vh;
+        width: 100%;
+    }
 }
