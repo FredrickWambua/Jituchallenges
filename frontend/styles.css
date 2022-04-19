@@ -10,6 +10,7 @@ body {
 }
 
 .section-one {
+    height: 60vh;
     background-image: url('./images/hero-cover.3.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -48,7 +49,276 @@ body {
     display: none;
 }
 
+.intro {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.people-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto ;
+    justify-content: center;
+    align-items: center;
+    margin-top: -80px;
+}
+
+.card-people {
+    background-color: white;
+    color: black;
+    padding-left: 5%;
+    justify-content: flex-start;
+}
+
+.card-people ion-icon {
+    color: blue;
+}
+
+.card-people-blue {
+     background-color: #23a6f0;;
+     padding-left: 20%;
+     color: white;
+     justify-content: flex-start;
+     padding-left: 4px;
+}
+
+.card-people-blue ion-icon {
+    color: white;
+}
+
+.card-people ion-icon, .card-people-blue ion-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.section-three {
+    background-color: white;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+.card {
+    text-align: center;
+}
+
+.card>ion-icon{
+    width: 50px;
+    height: 50px;
+    color: #23a6f0;
+}
+
+.section-four {
+    background-color: lightgray;
+}
+.people {
+    padding-top: 5rem;
+}
+.people-intro {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.people-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6rem;
+}
+
+.people-cards .card{
+    border: 1px solid gray;
+    padding: 30px;
+}
+
+.person-image {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.brands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10rem;
+}
+
+.brands >img {
+    height: 80px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.subscription {
+    background-color: #b00cf4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 5rem;
+
+}
+
+.pricing {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-intro {
+    margin-bottom: 100px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    justify-items: center;
+    padding-bottom: 40px;
+}
+
+.card {
+    padding: 30px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+#standard-card {
+    background-color: #252b42;
+    color: white;
+    margin-top: -30px;
+}
+.card button{
+    background-color: #23a6f0;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px 10px 30px;
+    color: white;
+    font-weight: 600;
+    height: 40px;
+}
+
+.section-five {
+    background-color: #252b42;
+}
+.ping-wing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    color: white;
+    padding-top: 50px;
+
+}
+
+.ping-wing-image img{
+    width: 50%;
+    color: white;
+    float: right;
+    object-fit:scale-down;
+    
+}
+
+.section-six {
+    background-color: lightgray;
+
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+#contact-btn {
+    background-color: #23a6f0;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px 10px 30px;
+    color: white;
+    font-weight: 600;
+    height: 40px;
+}
+
+.info-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.company-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.company-links a {
+    text-decoration: none;
+    color: gray;
+    font-weight: 600;
+}
+.company-links ion-icon {
+    color: #23a6f0;
+    width: 40px;
+    height: 20px;
+}
+
+#contact-info a{
+    display: flex;
+    align-items: center;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.copyright p {
+    color: gray;
+    font-weight: 600;
+}
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.socials ion-icon{
+    color: #23a6f0;
+    width: 30px;
+    height: 30px;
+}
 
 @media screen and (max-width: 456px) {
     .navbar-brand  {

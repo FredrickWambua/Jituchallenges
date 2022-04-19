@@ -40,7 +40,10 @@
                 </div>
             </nav>
             <div class="intro">
-                <h1>We Ensure A Best Insurance Service</h1>
+                <h1>We Ensure A Best 
+                    <br>
+                    Insurance Service
+                </h1>
                 <p>We know how large objects will act, but things on a small scale just do not act that way.</p>
                 <div class="intro-buttons">
                     <button class="quote">
@@ -51,18 +54,22 @@
                     </button>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section-two">
+        <div class="container">
             <div class="people-product">
-                <div class="card">
+                <div class="card-people">
                     <ion-icon name="people-outline"></ion-icon>
                     <h2>Peace of Mind</h2>
                     <p>The quick fox jumps over the lazy dog</p>
                 </div>
-                <div class="card">
+                <div class="card-people">
                     <ion-icon name="people-outline"></ion-icon>
                     <h2>Set For Life</h2>
                     <p>The quick fox jumps over the lazy dog</p>
                 </div>
-                <div class="card">
+                <div class="card-people-blue">
                     <ion-icon name="people-outline"></ion-icon>
                     <h2>100% Satisfaction</h2>
                     <p>The quick fox jumps over the lazy dog</p>
@@ -70,9 +77,8 @@
             </div>
         </div>
     </section>
-
     <!-- products section -->
-    <section class="section-two">
+    <section class="section-three">
         <div class="container">
             <div class="products">
                 <div class="card">
@@ -86,7 +92,7 @@
                     <p>The quick fox jumps over the lazy dog</p>
                 </div>
                 <div class="card">
-                    <ion-icon name="wallet-outline"></ion-icon>                
+                    <ion-icon name="people-outline"></ion-icon>                
                     <h3>100% Satisfaction</h3>
                     <p>The quick fox jumps over the lazy dog</p>
                 </div>
@@ -95,7 +101,7 @@
     </section>
 
     <!-- people products section -->
-    <section class="section-three">
+    <section class="section-four">
         <div class="container">
             <div class="people">
                 <div class="people-intro">
@@ -106,7 +112,7 @@
                 </div>
                 <div class="people-cards">
                     <div class="card">
-                        <img src="./images/user1.png" alt="">
+                        <img src="./images/user1.png" class="person-image" alt="">
                         <p>
                             Slate helps you see how many more days you need to work to reach your financial goal for the month and year.
                         </p>
@@ -119,7 +125,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./images/user2.png" alt="">
+                        <img src="./images/user2.png" class="person-image" alt="">
                         <p>
                             Slate helps you see how many more days you need to work to reach your financial goal for the month and year.
                         </p>
@@ -132,7 +138,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./images/user3.png" alt="">
+                        <img src="./images/user3.png" class="person-image" alt="">
                         <p>
                             Slate helps you see how many more days you need to work to reach your financial goal for the month and year.
                         </p>
@@ -156,6 +162,7 @@
         
             </div>
             <div class="subscription">
+                <p>Subscribe for latest newsletter</p>
                 <form action="">
                     <input type="text" name="" id="email" placeholder="Your Email">
                     <button>
@@ -164,10 +171,13 @@
                 </form>
             </div>
             <div class="pricing">
-                <p>
-                    Problems trying to resolve the conflicts between the two major realms of Classical physics:
-                    Newton mechanics.
-                </p>
+                <div class="pricing-intro">
+                    <h3>Pricing</h3>
+                    <p>
+                        Problems trying to resolve the conflicts between the two major realms of Classical physics:
+                        Newton mechanics.
+                    </p>
+                </div>
                 <div class="pricing-cards">
                     <div class="card">
                         <h2>FREE</h2>
@@ -184,7 +194,7 @@
                         <p>Email and commuity support</p>
                         <button>Try for free</button>
                     </div>
-                    <div class="card">
+                    <div class="card" id="standard-card">
                         <h2>STANDARD</h2>
                         <p>Organize across all apps by hand</p>
                         <div class="price-amount">
@@ -220,7 +230,7 @@
     </section>
 
     <!-- locations and appointment section -->
-    <section class="section-four">
+    <section class="section-five">
         <div class="container">
             <div class="ping-wing">
                 <div class="ping-wing-text">
@@ -237,37 +247,39 @@
             </div>
             <div class="appointment">
                 <img src="./images/#contact-cover.2.png" alt="">
-                <div class="form">
-                    <h1>Get A Free Quote Here</h1>
-                    <form action="">
-                        <label for="name">Name*</label>
-                        <input type="text" name="name" id="name" placeholder="Full Name">
-                        <label for="name">Emails*</label>
-                        <input type="text" name="email" id="email" placeholder="example@gmail.com">
-                        <label for="name">Depertment*</label>
-                        <select name="departments" id="departments">
-                            <option value="select">Please Select</option>
-                            <option value="IT">IT</option>
-                        </select>
-                        <label for="name">Time*</label>
-                        <select name="times" id="times">
-                            <option value="4pm">4:00 Available</option>
-                            <option value="5pm">5:00 Unavailable</option>
-                        </select>
-                        <button type="submit">Book Appointment</button>
-                    </form>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- contact section -->
-    <section class="section-five">
+    <section class="section-six">
         <div class="container">
+            <div class="form">
+                <h1>Get A Free Quote Here</h1>
+                <form action="">
+                    <label for="name">Name*</label>
+                    <input type="text" name="name" id="name" placeholder="Full Name">
+                    <label for="name">Emails*</label>
+                    <input type="text" name="email" id="email" placeholder="example@gmail.com">
+                    <label for="name">Depertment*</label>
+                    <select name="departments" id="departments">
+                        <option value="select">Please Select</option>
+                        <option value="IT">IT</option>
+                    </select>
+                    <label for="name">Time*</label>
+                    <select name="times" id="times">
+                        <option value="4pm">4:00 Available</option>
+                        <option value="5pm">5:00 Unavailable</option>
+                    </select>
+                    <button type="submit">Book Appointment</button>
+                </form>
+            </div>
             <div class="contact">
-                <h3>Consulting Agency For Your Business</h3>
-                <p>The quick fox jumps over the lazy dog</p>
-                <button>Contact Us</button>
+                <div class="contact-intro">
+                    <h3>Consulting Agency For Your Business</h3>
+                    <p>The quick fox jumps over the lazy dog</p>
+                </div>
+                <button id="contact-btn" >Contact Us</button>
             </div>
         </div>
     </section>
@@ -277,7 +289,7 @@
         <div class="container">
             <div class="info-links">
                 <div class="company-info">
-                    <h3>Company information</h3>
+                    <h3>Company info</h3>
                     <div class="company-links">
                         <a href="#">About Us</a>
                         <a href="#">Career</a>
@@ -313,8 +325,8 @@
                     </div>
                 </div>
                 <div class="company-info">
-                    <h3>CGet In Touch</h3>
-                    <div class="company-links">
+                    <h3>Get In Touch</h3>
+                    <div id="contact-info" class="company-links">
                         <a href="#"><ion-icon name="call-outline"></ion-icon>480) 555-0103</a>
                         <a href="#"><ion-icon name="location-outline"></ion-icon>4517 Washington Ave.</a>
                         <a href="#"><ion-icon name="mail"></ion-icon>debra.holt@example.com</a>
