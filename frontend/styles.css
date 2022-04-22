@@ -9,35 +9,107 @@ body {
     margin-right: auto;
 }
 
+nav {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .section-one {
-    height: 60vh;
     background-image: url('./images/hero-cover.3.png');
     background-size: cover;
+    color: white;
+    position: relative;
     background-repeat: no-repeat;
-    background-position: center;
+}
+
+.section-one::before {    
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.50);
+
+}
+.container-one {
+    position: relative;
+}
+.navbar {
+    display: flex;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    position: relative;
+
+}
+a {
+    text-decoration: none;
+
+}
+.navbar-brand a{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-elements {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+}
+
+.navbar-collapse {
+    display: flex;
+    font-size: 16px;
+}
+.login-membership {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+}
+
+.login-membership a {
     color: white;
 }
 
-.navbar-brand {
-    float: left;
-    text-decoration: none;
+.login-membership button{
+    display: flex;
+    gap: .5rem;
+    background-color: #23a6f0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px 10px 15px ;
+    align-items: center;
+    
 }
-.nav-elements {
-    float: right;
-}
-.navbar-nav {
-    margin-top: 0;
-
-}
-
-.navbar .navbar-nav .nav-item {
+.nav-item {
     display: inline;
     list-style: none;
+    justify-content: space-around;
+    color: white;
+
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-left: 18%;
+    align-items: center;
 }
 
-.navbar-nav .nav-item a {
+.nav-item a {
     text-decoration: none;
     display: inline-block;
+    justify-content: space-around;
+    color: white;
     /* padding: 0.9em 0.7em; */
 }
 
@@ -49,26 +121,66 @@ body {
     display: none;
 }
 
+
+
 .intro {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding-bottom: 150px;
+    text-align: center;
+    vertical-align: middle;
 }
+
+.intro h1{
+    font-size: 60px;
+    font-weight:800;
+}
+
+.intro p {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.intro-buttons button {
+    border-radius: 35px;
+    padding: 15px 40px 15px 40px;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+}
+
+.quote {
+    background-color: #23a6f0;
+    border: none;
+}
+
+.learn {
+    background-color: transparent;
+    border: 2px solid #23a6f0;
+}
+
 
 .people-product {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto ;
-    justify-content: center;
-    align-items: center;
-    margin-top: -80px;
+    left: 10%;
+    padding-top: 50px;
+    position: absolute;
+    bottom: -80px;
+}
+
+.section-two {
+    background-color: whitesmoke;
+    height: 30vh;
 }
 
 .card-people {
@@ -76,6 +188,8 @@ body {
     color: black;
     padding-left: 5%;
     justify-content: flex-start;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .card-people ion-icon {
@@ -84,10 +198,10 @@ body {
 
 .card-people-blue {
      background-color: #23a6f0;;
-     padding-left: 20%;
+     padding-left: 5%;
      color: white;
      justify-content: flex-start;
-     padding-left: 4px;
+     /* padding-left: 4px; */
 }
 
 .card-people-blue ion-icon {
@@ -112,20 +226,27 @@ body {
     margin-right: auto ;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 20px;
+    padding: 60px 0 60px 0;
 }
-.card {
+.card-second {
+    padding: 20px;
     text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+
 }
 
-.card>ion-icon{
+.card-second>ion-icon{
     width: 50px;
     height: 50px;
     color: #23a6f0;
 }
 
 .section-four {
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 .people {
     padding-top: 5rem;
@@ -134,6 +255,7 @@ body {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 30px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -146,8 +268,13 @@ body {
 }
 
 .people-cards .card{
-    border: 1px solid gray;
-    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 50px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .person-image {
@@ -170,13 +297,59 @@ body {
 }
 
 .subscription {
-    background-color: #b00cf4;
+    background-image: linear-gradient(to right, #0F52BA		 , #AA336A	);
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 15px;
     margin-top: 5rem;
+
+}
+
+.subscription h1{
+    font-size: large;
+    font-weight: 800;
+    color: white;
+}
+
+/* .subscription form {
+    display: flex;
+    gap: 0;
+    width: 50%;
+    align-items: center;
+    padding: 0;
+    
+} */
+.form-subscribe {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    position: relative;
+}
+
+.form-subscribe input {
+    width: 100%;
+    position: relative;
+    color: white;
+    font-size: 15px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+
+}
+
+
+.form-subscribe button {
+    position:absolute;
+    color: white ;   
+    background-color: #23a6f0; 
+    border: none;
+    right: 0;
+    font-size: 15px;
+    height: inherit;
+    padding: 15px 10px;
+    border-radius: 0 5px 5px 0;
 
 }
 
@@ -203,20 +376,56 @@ body {
     justify-content: baseline;
     justify-items: center;
     padding-bottom: 40px;
+    height: 100%;
 }
 
-.card {
-    padding: 30px;
-    border: 1px solid blue;
+.card-per-pricing {
+    padding: 20px;
     border-radius: 5px;
+    border: 1px solid #23a6f0;
+
 }
 
+.price-amount {
+    color: #23a6f0;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+}
+.flexed-right h1 {
+
+}
+.flexed-right p {
+    margin: 0;
+}
+
+.flexed-right {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-left: 5%;
+
+}
+
+.card-per-pricing ion-icon {
+    color: #32CD32		;
+    height: 30px;
+    width: 30px;
+}
+
+#gray-icon {
+    color: gray;
+}
+.card-per-pricing p {
+    display: flex;
+    align-items: center;
+}
 #standard-card {
     background-color: #252b42;
     color: white;
     margin-top: -30px;
 }
-.card button{
+.card-per-pricing button{
     background-color: #23a6f0;
     border-radius: 5px;
     border: none;
@@ -224,10 +433,13 @@ body {
     color: white;
     font-weight: 600;
     height: 40px;
+    width: 100%;
 }
 
 .section-five {
     background-color: #252b42;
+    position: relative;
+    height: 100vh;
 }
 .ping-wing {
     display: grid;
@@ -235,12 +447,14 @@ body {
     justify-content: space-between;
     color: white;
     padding-top: 50px;
-    padding-bottom: 350px;
+    padding-bottom: 70px;
 
 }
 
 .ping-wing-text h1 {
-    font-size: 50px;
+    font-size: 40px;
+    padding-top: 0%;
+    margin-top: 0;
 }
 
 .ping-wing-image img{
@@ -250,31 +464,23 @@ body {
     justify-items: center;
     
 }
-
-/* .section-six {
-    background-color: lightgray;
-
-} */
-
 .contact-page {
     display: flex;
     flex-direction: row;  
-    width: 80%;  
+    width: 70%;  
     margin-right: auto;
     margin-left: auto;
     background-color: white;
-    margin-top: -30%;
-    z-index: 2;
-
+    /* position: absolute; */
+    margin-bottom: -40px;
 }
 
 .contact-page img{
     width: 100%;
 }
 
-.form form{
-    /* width: 100%; */
-    padding: 12px 20px;
+.form-contact form{
+    padding: 20px;
     display: inline-block;
 }
 
@@ -282,7 +488,7 @@ body {
     text-align: center;
 }
 
-input[type=text], select {
+.form-contact input[type=text], select {
     width: 100%;
     height: 50px;
     padding: 12px 20px;
@@ -306,12 +512,18 @@ input[type=text], select {
     cursor: pointer;
 }
 
+
+.section-six {
+    background-color: #E5E4E2	;
+}
+
 .contact {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    padding-top: 25rem;
 }
 
 #contact-btn {

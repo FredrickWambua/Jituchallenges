@@ -10,10 +10,12 @@
 <body>
     <!-- landing page section -->
     <section class="section-one">
-        <div class="container">
+        <div class="container container-one">
             <nav>
                 <div class="navbar">
-                    <a href="#" class="navbar-brand">BrandName</a>
+                    <div class="navbar-brand">
+                        <a href="#">BrandName</a>
+                    </div>
                     <div class="nav-elements">
                         <ion-icon name="search-outline"></ion-icon>
                         <ion-icon name="cart-outline"></ion-icon>
@@ -37,6 +39,14 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="login-membership">
+                        <div class="login">
+                            <a href="#">Login</a>
+                        </div>
+                        <div class="membership">
+                            <button id="memeber-button">Become a member<ion-icon name="arrow-forward"></ion-icon></button>
+                        </div>
+                    </div>
                 </div>
             </nav>
             <div class="intro">
@@ -54,10 +64,6 @@
                     </button>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="section-two">
-        <div class="container">
             <div class="people-product">
                 <div class="card-people">
                     <ion-icon name="people-outline"></ion-icon>
@@ -77,21 +83,26 @@
             </div>
         </div>
     </section>
+    <section class="section-two">
+        <div class="container">
+            
+        </div>
+    </section>
     <!-- products section -->
     <section class="section-three">
         <div class="container">
             <div class="products">
-                <div class="card">
+                <div class="card-second">
                     <ion-icon name="wallet-outline"></ion-icon>                
                     <h3>Peace of Mind</h3>
                     <p>The quick fox jumps over the lazy dog</p>
                 </div>
-                <div class="card">
-                    <ion-icon name="wallet-outline"></ion-icon>                
+                <div class="card-second">
+                    <ion-icon name="bookmarks-outline"></ion-icon>
                     <h3>Set For Life</h3>
                     <p>The quick fox jumps over the lazy dog</p>
                 </div>
-                <div class="card">
+                <div class="card-second">
                     <ion-icon name="people-outline"></ion-icon>                
                     <h3>100% Satisfaction</h3>
                     <p>The quick fox jumps over the lazy dog</p>
@@ -105,7 +116,7 @@
         <div class="container">
             <div class="people">
                 <div class="people-intro">
-                    <h3>Industry</h3>
+                    <h1>Industry</h1>
                     <p>Problems trying to resolve the conflicts between the two major realms of Classical physics:
                         Newton mechanics.
                     </p>
@@ -162,8 +173,8 @@
         
             </div>
             <div class="subscription">
-                <p>Subscribe for latest newsletter</p>
-                <form action="">
+                <h1>Subscribe For Latest <br> Newsletter</h1>
+                <form class="form-subscribe" >
                     <input type="text" name="" id="email" placeholder="Your Email">
                     <button>
                         Subscribe
@@ -179,49 +190,58 @@
                     </p>
                 </div>
                 <div class="pricing-cards">
-                    <div class="card">
+                    <div class="card-per-pricing">
                         <h2>FREE</h2>
                         <p>Organize across all apps by hand</p>
                         <div class="price-amount">
-                            <h1>0 <span>$</span></h1>
-                            <p>Per Month</p>
+                            <h1>0</h1>
+                            <div class="flexed-right">
+                                <p>$</p>
+                                <p>Per Month</p>
+                            </div>
                         </div>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>1 GB Cloud storage</p>
-                        <p>Email and commuity support</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon id="gray-icon" name="checkmark-circle"></ion-icon>1 GB Cloud storage</p>
+                        <p><ion-icon id="gray-icon"  name="checkmark-circle"></ion-icon>Email and commuity support</p>
                         <button>Try for free</button>
                     </div>
-                    <div class="card" id="standard-card">
+                    <div class="card-per-pricing" id="standard-card">
                         <h2>STANDARD</h2>
                         <p>Organize across all apps by hand</p>
                         <div class="price-amount">
-                            <h1>9.99<span>$</span></h1>
-                            <p>Per Month</p>
+                            <h1>9.99</h1>
+                            <div class="flexed-right">
+                                <p>$</p>
+                                <p>Per Month</p>
+                            </div>
                         </div>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>1 GB Cloud storage</p>
-                        <p>Email and commuity support</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon id="gray-icon"  name="checkmark-circle"></ion-icon>1 GB Cloud storage</p>
+                        <p><ion-icon id="gray-icon"  name="checkmark-circle"></ion-icon>Email and commuity support</p>
                         <button>Try for free</button>
                     </div>
-                    <div class="card">
+                    <div class="card-per-pricing">
                         <h2>PREMIUM</h2>
                         <p>Organize across all apps by hand</p>
                         <div class="price-amount">
-                            <h1>19.99 <span>$</span></h1>
-                            <p>Per Month</p>
+                            <h1>19.99</h1>
+                            <div class="flexed-right">
+                                <p>$</p>
+                                <p>Per Month</p>
+                            </div>
                         </div>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>Unlimited products update</p>
-                        <p>1 GB Cloud storage</p>
-                        <p>Email and commuity support</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon name="checkmark-circle"></ion-icon>Unlimited products update</p>
+                        <p><ion-icon id="gray-icon"  name="checkmark-circle"></ion-icon>1 GB Cloud storage</p>
+                        <p><ion-icon id="gray-icon"  name="checkmark-circle"></ion-icon>Email and commuity support</p>
                         <button>Try for free</button>
                     </div>
                 </div>
@@ -231,10 +251,10 @@
 
     <!-- locations and appointment section -->
     <section class="section-five">
-        <div class="container">
+        <div class="container ping">
             <div class="ping-wing">
                 <div class="ping-wing-text">
-                    <h1>We Have Branches All Over The World</h1>
+                    <h1>We Have Branches All <br> Over The World</h1>
                     <p>
                         The gradual accumulation of information about atomic and small-scale behaviour
                         during the first quarter of 20th century, which gave indications about how small things behave,
@@ -245,20 +265,11 @@
                     <img src="./images/pingwig.png" alt="">
                 </div>
             </div>
-            <div class="appointment">
-                <img src="./images/#contact-cover.2.png" alt="">
-            </div>
-        </div>
-    </section>
-
-    <!-- contact section -->
-    <section class="section-six">
-        <div class="container">
             <div class="contact-page">
                 <div class="form-image">
                     <img src="./images/contact.png" alt="">
                 </div>
-                <div class="form">
+                <div class="form-contact">
                     <h1>Get A Free Quote Here</h1>
                     <form action="">
                         <label for="name">Name*</label>
@@ -279,6 +290,12 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="section-six">
+        <div class="container">
             <div class="contact">
                 <div class="contact-intro">
                     <h1>Consulting Agency For Your Business</h1>
