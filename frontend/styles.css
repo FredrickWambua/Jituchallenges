@@ -20,6 +20,7 @@ nav {
     color: white;
     position: relative;
     background-repeat: no-repeat;
+    height: 100%;
 }
 
 .section-one::before {    
@@ -129,7 +130,6 @@ a {
     margin-right: auto;
     padding-bottom: 150px;
     text-align: center;
-    vertical-align: middle;
 }
 
 .intro h1{
@@ -537,8 +537,8 @@ a {
 }
 
 .info-links {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr ;    
     justify-content: space-between;
 }
 
@@ -563,12 +563,14 @@ a {
     display: flex;
     align-items: center;
 }
-
+.social-footer {
+    background-color: whitesmoke;}
 .copyright {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 60px;
+    background-color: whitesmoke;
 }
 
 .copyright p {
@@ -585,37 +587,4 @@ a {
     color: #23a6f0;
     width: 30px;
     height: 30px;
-}
-
-@media screen and (max-width: 456px) {
-    .navbar-brand  {
-        display: inline-block;
-        float: none;
-    }
-
-    .toggle-collapse {
-        display: inline-block;
-    }
-
-    .navbar-nav {
-        padding: 0;
-    }
-
-    .navbar .navbar-nav .nav-item {
-        display: block;
-        list-style: none;
-    }
-
-    .navbar-collapse {
-        width: 100px;
-        overflow: hidden;
-        text-align: center;
-        height: 0vh;
-    }
-
-    .collapse {
-        height: 30vh;
-        width: 100%;
-        background-color: white;
-    }
 }
