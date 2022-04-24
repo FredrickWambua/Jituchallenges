@@ -11,10 +11,26 @@
     <div class="container">
         <div class="tasks-page">
             <div class="to-do">
+                <form action="">
+                    <input type="text" id="title" name="title" placeholder="Add To-Do titile"><br>
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter topic description"></textarea><br>
+                    <div id="message"></div>
+                    <button type="submit">Post</button>
+                </form>
+                <div class="todo-list">
+                    <div></div>
+                </div>
                 <div class="card">
                     <div class="card-header">
                         <h3>writing to do app</h3>
-                        <h3>22:00 pm</h3>
+                        <div class="move-period">
+                            <ion-icon name="ellipsis-vertical"></ion-icon>
+                            <small><span>posted on:</span></small>
+                        </div>
+                        <div class="move-options">
+                            <small>move to incomplete</small>
+                            <small>move to completed</small>
+                        </div>
                     </div>
                     <div class="card-content">
                         <div class="description">
@@ -43,5 +59,8 @@
             </div>
         </div>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="./dist/app.js"></script>
 </body>
 </html>

@@ -1,13 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-}
+    background: linear-gradient(360deg, #01a99c 10%, #0698b1 360%)}
 
 .container  {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     justify-items: center;
+    height: 100%;
 }
 
 .tasks-page {
@@ -18,17 +19,50 @@ body {
     justify-items: center;
 
 }
+#message{
+    color: red;
+}
 
 .card {
-    border: 1px solid purple;
     padding: 15px;
-
+    color: black;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    border-radius: 10px;
+    box-shadow: 20px 20px 60px 0 #bebebe, -20px, -20px, 60px #ffffff;
 
 }
+
+.card:hover {
+    box-shadow: 20px 20px 60px 0 red, -20px, -20px, 60px #ffffff;
+  }
 
 .card-header {
     display: flex;
     justify-content: space-between;
+}
+
+.move-period {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.move-period ion-icon {
+    margin-right: 0;
+    cursor: pointer;
+}
+.move-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.move-options small {
+    border-bottom: 1px solid gray;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 3px;
+    cursor: pointer;
 }
 
 .edit-delete {
