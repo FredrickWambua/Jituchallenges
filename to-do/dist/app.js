@@ -91,15 +91,22 @@ class ToDoInput {
     }
 }
 class ToDoList {
-    constructor() {
+    constructor(type) {
+        this.type = type;
         this.assignedTodos = [];
         todoPosting.addListener((todos) => {
-            this.assignedTodos = todos;
+            const relevantTodos = todos.filter(todo => {
+                if (this.type === 'active') {
+                    return todo.status === ToDoStatus.active;
+                }
+                return todo.status === ToDoStatus.completed;
+            });
+            this.assignedTodos = relevantTodos;
             this.renderToDos();
         });
     }
     renderToDos() {
-        const listElem = document.getElementById('todo-list');
+        const listElem = document.getElementById(`${this.type}-todo-list`);
         listElem.innerHTML = '';
         for (const todo of this.assignedTodos) {
             const listItem = document.createElement('li');
@@ -108,6 +115,7 @@ class ToDoList {
         }
     }
 }
-const todoList = new ToDoList();
+const activeTodoList = new ToDoList('active');
+const completedTodoList = new ToDoList('completed');
 const ToDoInstance = new ToDoInput();
 //# sourceMappingURL=app.js.map

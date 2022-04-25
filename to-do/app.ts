@@ -119,15 +119,21 @@ class ToDoInput {
 }
 class ToDoList {
     assignedTodos: ToDo[] =[]
-    constructor(){
+    constructor(private type: string){
         todoPosting.addListener((todos:ToDo[])=>{
-            this.assignedTodos = todos;
+            const relevantTodos = todos.filter(todo=>{
+                if (this.type === 'active'){
+                    return todo.status ===ToDoStatus.active;
+                }
+                return todo.status === ToDoStatus.completed;
+            });
+            this.assignedTodos = relevantTodos;
             this.renderToDos();
 
         })
     }
     private renderToDos(){
-        const listElem = document.getElementById('todo-list') as HTMLUListElement;
+        const listElem = document.getElementById(`${this.type}-todo-list`) as HTMLUListElement;
         listElem.innerHTML = '';
         for (const todo of this.assignedTodos){
             const listItem:any = document.createElement('li');
@@ -136,5 +142,6 @@ class ToDoList {
         }
     }
 }
-const todoList = new ToDoList();
+const activeTodoList = new ToDoList('active');
+const completedTodoList = new ToDoList('completed');
 const ToDoInstance = new ToDoInput() ;
