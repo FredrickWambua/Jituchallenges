@@ -13,10 +13,18 @@ var ToDoStatus;
     ToDoStatus[ToDoStatus["incomplete"] = 1] = "incomplete";
     ToDoStatus[ToDoStatus["completed"] = 2] = "completed";
 })(ToDoStatus || (ToDoStatus = {}));
-class ToDoPosting {
+class State {
     constructor() {
-        this.todos = [];
         this.listeners = [];
+    }
+    addListener(listener) {
+        this.listeners.push(listener);
+    }
+}
+class ToDoPosting extends State {
+    constructor() {
+        super();
+        this.todos = [];
     }
     static getInstance() {
         if (this.instance) {
@@ -26,9 +34,6 @@ class ToDoPosting {
             this.instance = new ToDoPosting();
             return this.instance;
         }
-    }
-    addListener(listener) {
-        this.listeners.push(listener);
     }
     addToDo(title, description) {
         const todo = new ToDo(Math.random(), title, description, ToDoStatus.active);

@@ -14,14 +14,23 @@ enum ToDoStatus{
     incomplete,
     completed,
 }
-type Listener = (todos:ToDo[])=> void;
-class ToDoPosting {
+type Listener<T> = (todos:T[])=> void;
+
+class State<T> {
+    protected listeners: Listener<T>[] = [];
+    addListener(listener: Listener<T>){
+        this.listeners.push(listener)
+    }
+
+}
+
+class ToDoPosting extends State<ToDo>{
     private static instance : ToDoPosting;
     private todos: ToDo[] = [];
-    private listeners: Listener[] = [];
-    private constructor(){
-
+    private constructor(){ 
+        super()
     }
+
     static getInstance(){
             if(this.instance){
                 return this.instance;
@@ -30,9 +39,7 @@ class ToDoPosting {
                 return this.instance;
             }
         }
-    addListener(listener: Listener){
-        this.listeners.push(listener)
-    }
+
     addToDo(title:string|number, description: string){
         const todo = new ToDo(Math.random(), title, description, ToDoStatus.active);
         this.todos.push(todo);
