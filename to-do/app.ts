@@ -1,20 +1,48 @@
 
 
-const toDoList = document.getElementById('todo-list')
 class ToDo {
     constructor(
         public id: number,
         public title: string | number,
         public description: string , 
         public status: ToDoStatus,
-        public message: string,
         ){}
 }
 
 enum ToDoStatus{
+    active,
     incomplete,
     completed,
 }
+type Listener = (todos:ToDo[])=> void;
+class ToDoPosting {
+    private static instance : ToDoPosting;
+    private todos: ToDo[] = [];
+    private listeners: Listener[] = [];
+    private constructor(){
+
+    }
+    static getInstance(){
+            if(this.instance){
+                return this.instance;
+            }else {
+                this.instance  = new ToDoPosting()
+                return this.instance;
+            }
+        }
+    addListener(listener: Listener){
+        this.listeners.push(listener)
+    }
+    addToDo(title:string|number, description: string){
+        const todo = new ToDo(Math.random(), title, description, ToDoStatus.active);
+        this.todos.push(todo);
+        for (const listener of this.listeners){
+            listener(this.todos)
+        }
+    }
+    }
+
+const todoPosting:any = ToDoPosting.getInstance()
 
 interface ValidateData {
     value: string | number;
@@ -52,8 +80,10 @@ class ToDoInput {
             const userData = this.acceptData();
 
             if (userData){
-                console.log(userData)
+                const [title, description] = userData
                 this.clearInput();
+                todoPosting.addToDo(title, description);
+
             }
 
             
@@ -87,5 +117,24 @@ class ToDoInput {
     }
 
 }
+class ToDoList {
+    assignedTodos: ToDo[] =[]
+    constructor(){
+        todoPosting.addListener((todos:ToDo[])=>{
+            this.assignedTodos = todos;
+            this.renderToDos();
 
+        })
+    }
+    private renderToDos(){
+        const listElem = document.getElementById('todo-list') as HTMLUListElement;
+        listElem.innerHTML = '';
+        for (const todo of this.assignedTodos){
+            const listItem:any = document.createElement('li');
+            listItem.innerHTML = todo.title;
+            listElem.appendChild(listItem);
+        }
+    }
+}
+const todoList = new ToDoList();
 const ToDoInstance = new ToDoInput() ;

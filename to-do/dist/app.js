@@ -1,19 +1,44 @@
 "use strict";
-const toDoList = document.getElementById('todo-list');
 class ToDo {
-    constructor(id, title, description, status, message) {
+    constructor(id, title, description, status) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.status = status;
-        this.message = message;
     }
 }
 var ToDoStatus;
 (function (ToDoStatus) {
-    ToDoStatus[ToDoStatus["incomplete"] = 0] = "incomplete";
-    ToDoStatus[ToDoStatus["completed"] = 1] = "completed";
+    ToDoStatus[ToDoStatus["active"] = 0] = "active";
+    ToDoStatus[ToDoStatus["incomplete"] = 1] = "incomplete";
+    ToDoStatus[ToDoStatus["completed"] = 2] = "completed";
 })(ToDoStatus || (ToDoStatus = {}));
+class ToDoPosting {
+    constructor() {
+        this.todos = [];
+        this.listeners = [];
+    }
+    static getInstance() {
+        if (this.instance) {
+            return this.instance;
+        }
+        else {
+            this.instance = new ToDoPosting();
+            return this.instance;
+        }
+    }
+    addListener(listener) {
+        this.listeners.push(listener);
+    }
+    addToDo(title, description) {
+        const todo = new ToDo(Math.random(), title, description, ToDoStatus.active);
+        this.todos.push(todo);
+        for (const listener of this.listeners) {
+            listener(this.todos);
+        }
+    }
+}
+const todoPosting = ToDoPosting.getInstance();
 function validate(validateInput) {
     let isValid = true;
     if (validateInput.required) {
@@ -35,8 +60,9 @@ class ToDoInput {
             e.preventDefault();
             const userData = this.acceptData();
             if (userData) {
-                console.log(userData);
+                const [title, description] = userData;
                 this.clearInput();
+                todoPosting.addToDo(title, description);
             }
         });
     }
@@ -64,5 +90,24 @@ class ToDoInput {
         return [title, description];
     }
 }
+class ToDoList {
+    constructor() {
+        this.assignedTodos = [];
+        todoPosting.addListener((todos) => {
+            this.assignedTodos = todos;
+            this.renderToDos();
+        });
+    }
+    renderToDos() {
+        const listElem = document.getElementById('todo-list');
+        listElem.innerHTML = '';
+        for (const todo of this.assignedTodos) {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = todo.title;
+            listElem.appendChild(listItem);
+        }
+    }
+}
+const todoList = new ToDoList();
 const ToDoInstance = new ToDoInput();
 //# sourceMappingURL=app.js.map
