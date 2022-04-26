@@ -43,21 +43,10 @@ class ToDoPosting extends State<ToDo>{
     addToDo(title:string|number, description: string){
         const todo = new ToDo(Math.random(), title, description, ToDoStatus.active);
         this.todos.push(todo);
-        this.updateListeners()
-    }
-    moveTodo(todoId: string, newStatus: ToDoStatus){
-        const todo:any = this.todos.find((tdo) => tdo.id === todo.id);
-        if(todo){
-            todo.status = newStatus;
-            this.updateListeners();
-        }
-    }
-    updateListeners(){
         for (const listener of this.listeners){
             listener(this.todos)
         }
     }
-
     }
 
 const todoPosting:any = ToDoPosting.getInstance()
@@ -65,19 +54,6 @@ const todoPosting:any = ToDoPosting.getInstance()
 interface ValidateData {
     value: string | number;
     required: true;
-
-}   
-
-interface Draggable {
-    dragStartHandler(event:DragEvent): void;
-    dragEndHandler(event:DragEvent):void;
-
-}
-
-interface DragTarget {
-    dragOverHandler(event:DragEvent): void;
-    dragLeaveHandler(event:DragEvent): void;
-    dropHandler(event:DragEvent): void;
 
 }
 
@@ -148,11 +124,9 @@ class ToDoInput {
     }
 
 }
-class ToDoList implements DragTarget {
-    assignedTodos: ToDo[] =[];
-    ulElem: HTMLUListElement;
+class ToDoList {
+    assignedTodos: ToDo[] =[]
     constructor(private type: string){
-        this.ulElem = document.getElementById(`${this.type}-todo-list`) as HTMLUListElement;
         todoPosting.addListener((todos:ToDo[])=>{
             const relevantTodos = todos.filter(todo=>{
                 if (this.type === 'active'){
@@ -162,63 +136,17 @@ class ToDoList implements DragTarget {
             });
             this.assignedTodos = relevantTodos;
             this.renderToDos();
-        });
-        this.configure()
-    }
-    configure(){
-        this.ulElem.addEventListener('dragover', this.dragOverHandler.bind(this));
-        this.ulElem.addEventListener('dragleave', this.dragLeaveHandler.bind(this));
-        this.ulElem.addEventListener('drop', this.dropHandler.bind(this));
-    }
-    dragOverHandler(event: DragEvent): void {
-        event.preventDefault()
-        this.ulElem.classList.add('droppable');
-    }
-    dragLeaveHandler(event: DragEvent): void {
-        this.ulElem.classList.remove('droppable');
-    }
 
-    dropHandler(event: DragEvent): void {
-        if (event.dataTransfer && event.dataTransfer.types[0]==='text/plain'){
-            let todoId = event.dataTransfer.getData('text/plain');
-            todoPosting.moveTodo(todoId, )
-        }
+        })
     }
-
     private renderToDos(){
-        this.ulElem.innerHTML = '';
+        const listElem = document.getElementById(`${this.type}-todo-list`) as HTMLUListElement;
+        listElem.innerHTML = '';
         for (const todo of this.assignedTodos){
-            new TodoItem(todo, this.ulElem);
+            const listItem:any = document.createElement('li');
+            listItem.innerHTML = todo.title;
+            listElem.appendChild(listItem);
         }
-    }
-}
-
-class TodoItem implements Draggable{
-    liElement: HTMLLIElement;
-    constructor(private todo:ToDo, private element: HTMLUListElement){
-        this.liElement = document.createElement('li');
-        this.liElement.setAttribute('draggable', 'true')
-        this.renderContent();
-        this.configure()
-    }
-    private configure(){
-        this.liElement.addEventListener('dragstart', this.dragStartHandler);
-        this.liElement.addEventListener('dragend', this.dragEndHandler);
-    }
-
-    dragStartHandler(event: DragEvent): void {
-        event.dataTransfer!.setData('text/plain', this.todo.id.toString());
-        event.dataTransfer!.effectAllowed = 'move';
-    }
-
-    dragEndHandler(event: DragEvent): void {
-
-    }
-    renderContent(){
-        const liData = `<div class='card-elements'><h3 class ='title'>${this.todo.title}</h3>
-        <div class= 'description'>${this.todo.description}</div></div>`;
-        this.liElement.innerHTML = liData;
-        this.element.appendChild(this.liElement);
     }
 }
 const activeTodoList = new ToDoList('active');

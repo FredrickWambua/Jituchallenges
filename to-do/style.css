@@ -69,22 +69,3 @@ body {
     display: flex;
     justify-content: space-between;
 }
-ul {
-    list-style-type: none;
-}
-.title {
-    font-size: large;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-.card-elements {
-    background-color: aqua;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    padding: 30px;
-}
-
-.droppable{
-    background-color: gray;
-}

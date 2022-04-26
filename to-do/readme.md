@@ -12,4 +12,4 @@ Implimented with Typescript, HTML and CSS. No database or any typescript framewo
 ## Other Important 
  - User interface – make it interactive 
  - Validation
- -  Creativity
+ - Creativity
