@@ -4,32 +4,41 @@
 // if any character on the range is divisible by 5, substiute it by printing Buzz
 // if any character on the range is divisible by 3 and 5, substitute it by printing FizzBuzz
 
-for ( var i = 1; i <= 100; i++) {
-    if (i % 3 == 0 && i % 5 == 0){
-        console.log('FIZZBUZZ');
-    }
-    else if (i % 3 == 0){
-        console.log('FIZZ');
-    }
-    else if (i % 5 == 0){
-        console.log('BUZZ');
-    }
-    else {
-        console.log(i)
-    }
-}
+// for ( var i = 1; i <= 100; i++) {
+//     if (i % 3 == 0 && i % 5 == 0){
+//         console.log('FIZZBUZZ');
+//     }
+//     else if (i % 3 == 0){
+//         console.log('FIZZ');
+//     }
+//     else if (i % 5 == 0){
+//         console.log('BUZZ');
+//     }
+//     else {
+//         console.log(i)
+//     }
+// }
 
+// OR
+
+for(var i = 1; i<=100; i++){
+    var output = "";
+    if(i%3==0){ output += "Fizz"}
+    if(i%5==0){ output += "Buzz"}
+    if(output == ""){ output = i}
+    console.log(output)
+}
 // BDD
 // define a funtion with two arguments, num and target
 // check which two intergers in nums when added the answer is equal to the targer
 // return the indices of those numbers
 // if they match, print the number
 
-let addTo = (num, target)=>{
-    for (i =0; i<=num.length; i++){
+// let addTo = (num, target)=>{
+//     for (i =0; i<=num.length; i++){
         
-    }
-}
+//     }
+// }
 
 // 3 BDD
 // declare an array
@@ -50,8 +59,10 @@ function palindrome(x){
 // define the function and pass the numbers as an argument
 // writ a for loop to indicate the length of the numbers
 // assign a variable that displays the total sum
+
+
 let sum = 0;
-function sumOfNumbers(numbers){
+function sumOfNumbers(...numbers){
     for (i =0; i < numbers.length; i++){
         sum += numbers[i];
     }
